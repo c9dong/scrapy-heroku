@@ -12,8 +12,8 @@ from scrapyd.environ import Environment
 from scrapyd.eggstorage import FilesystemEggStorage
 from scrapyd.website import Root
 
-from components.poller import PgQueuePoller
-from components.scheduler import PgScheduler
+from poller import PgQueuePoller
+from scheduler import PgScheduler
 
 
 def application(config):
