@@ -37,6 +37,7 @@ class PgPriorityQueue(object):
       cursor = self.conn.cursor()
       cursor.execute(q, args)
     except (psycopg2.InterfaceError, psycopg2.OperationalError) as err:
+      print err
       self.conn = psycopg2.connect(self.conn_string)
       cursor = self.conn.cursor()
       cursor.execute(q, args)
@@ -63,7 +64,7 @@ class PgPriorityQueue(object):
       return
     id_, msg = results[0]
     q = "delete from %s where id=%%s;" % self.table
-    self._execute(q, (id_,), results=False)
+    self.__execute(q, (id_,), results=False)
     self.conn.commit()
     return self.__decode(msg)
 
