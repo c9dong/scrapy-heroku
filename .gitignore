@@ -7,3 +7,7 @@ cover
 *.egg-info
 build
 dist
+.Python
+bin/
+include/
+lib/
