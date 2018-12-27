@@ -1,6 +1,6 @@
 from scrapyd.scheduler import SpiderScheduler
 
-from util import get_spider_queues
+from utils import get_spider_queues
 
 class PgScheduler(SpiderScheduler):
   def __init__(self, config):
